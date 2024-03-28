@@ -1,7 +1,7 @@
 """LoadBalancer: redirect any incoming request to an endpoint replica."""
 import logging
-import threading
 import os
+import threading
 import time
 from typing import Optional
 

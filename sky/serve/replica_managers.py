@@ -487,12 +487,14 @@ class ReplicaInfo:
                 msg += 'POST'
                 response = requests.post(
                     readiness_path,
-                    json=post_data, verify=False,
+                    json=post_data,
+                    verify=False,
                     timeout=serve_constants.READINESS_PROBE_TIMEOUT_SECONDS)
             else:
                 msg += 'GET'
                 response = requests.get(
-                    readiness_path, verify=False,
+                    readiness_path,
+                    verify=False,
                     timeout=serve_constants.READINESS_PROBE_TIMEOUT_SECONDS)
             msg += (f' request to {replica_identity} returned status '
                     f'code {response.status_code}')
